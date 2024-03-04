@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Home from "./page";
+import { Space_Grotesk } from "next/font/google";
+import "./ui/globals.css";
+import Nav from "./ui/nav/nav";
+
+const grotesk = Space_Grotesk({
+  weight: ["300", "700", "600"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Image Gallery",
-  description: "Search beautiful images with full HD resolution",
-  keywords: "unsplash, images, search, gallery, HD, resolution",
+  title: "ImageGrid",
+  description: "See beautiful images with full HD resolution",
+  keywords: "unsplash, images, search, gallery, HD, resolution, talent",
 };
 
 export default function RootLayout({
@@ -15,7 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body
+        className={`${grotesk.className} bg-neutral-100 w-full min-h-screen tracking-tighter`}
+      >
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }
