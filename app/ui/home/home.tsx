@@ -66,24 +66,6 @@ export default function Home({ data }: Props) {
     }
   };
 
-  const appearImg = contextSafe(() => {
-    gsap.fromTo(
-      "img",
-      {
-        delay: 0,
-        y: "-100%",
-        ease: "power2.out",
-        duration: 0.7,
-      },
-      {
-        delay: 0,
-        y: 0,
-        ease: "power2.out",
-        duration: 0.7,
-      }
-    );
-  });
-
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -100,16 +82,17 @@ export default function Home({ data }: Props) {
 
   return (
     <section className="h-[90vh]" ref={container}>
-      {data.map((infoImg: IImage) => (
-        <div key={infoImg.id} className="text-right">
+      <div className="flex flex-col items-end">
+        {data.map((infoImg: IImage) => (
           <button
+            key={infoImg.id}
             onClick={changeImg}
             value={infoImg.id}
             className="overflow-hidden"
           >
             <h2
               id="autorName"
-              className="uppercase font-bold text-3xl group text-right hidden"
+              className="uppercase font-bold text-3xl group text-right hidden md:text-4xl "
             >
               {infoImg.user.first_name}
               <span className="font-light text-sm hidden group-hover:block text-right">
@@ -117,20 +100,36 @@ export default function Home({ data }: Props) {
               </span>
             </h2>
           </button>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <div
         className="overflow-hidden w-3/5 h-1/2 fixed bottom-5 left-5 max-h-[80vh] before:content-['Click_Me'] before:absolute
-      before:bottom-0 before:z-10 before:text-neutral-100 before:left-1"
+      before:bottom-0 before:z-10 before:text-neutral-100 before:left-1 cursor-pointer"
         onClick={viewFullImgAnimation}
       >
         <Image
           src={currentImg.urls.full}
           alt={currentImg.id.toString()}
           className="hidden object-cover"
-          onLoad={appearImg}
-          sizes="(max-width: 1200px) 80vw"
+          onLoad={contextSafe(() => {
+            gsap.fromTo(
+              "img",
+              {
+                delay: 0,
+                y: "-100%",
+                ease: "power2.out",
+                duration: 0.7,
+              },
+              {
+                delay: 0,
+                y: 0,
+                ease: "power2.out",
+                duration: 0.7,
+              }
+            );
+          })}
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
           fill
           priority
         />
