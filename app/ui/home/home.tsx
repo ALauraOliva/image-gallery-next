@@ -10,21 +10,55 @@ type Props = {
 };
 
 export default function Home({ data }: Props) {
-  const [currentImg, setCurrentImg] = useState(data[0]);
-  const changeImg = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const imgSelected = data.find(
-      (filterImg) => filterImg.id === event.currentTarget.value
-    );
-    if (imgSelected) {
-      setCurrentImg(imgSelected);
-    }
-  };
-
   const container = useRef<HTMLInputElement | null>(null);
+  const [currentImg, setCurrentImg] = useState(data[0]);
+  const { contextSafe } = useGSAP({ scope: container });
+  const changeImg = contextSafe(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      const imgSelected = data.find(
+        (filterImg) => filterImg.id === event.currentTarget.value
+      );
+
+      if (imgSelected && imgSelected.id !== currentImg.id) {
+        gsap.to("img", {
+          delay: 0,
+          y: "102%",
+          ease: "power2.out",
+          duration: 0.7,
+          onComplete: () => {
+            if (imgSelected) {
+              setCurrentImg(imgSelected);
+            }
+          },
+        });
+      } else if (imgSelected) {
+        setCurrentImg(imgSelected);
+      }
+    }
+  );
+
+  const apperAnimation = contextSafe(() => {
+    gsap.fromTo(
+      "img",
+      {
+        delay: 0,
+        y: "-100%",
+        ease: "power2.out",
+        duration: 0.7,
+      },
+      {
+        delay: 0,
+        y: 0,
+        ease: "power2.out",
+        duration: 0.7,
+      }
+    );
+  });
+
   useGSAP(
     () => {
       const tl = gsap.timeline({
-        defaults: { ease: "power2.out", duration: 0.8 },
+        defaults: { ease: "power2.out", duration: 0.7 },
       });
 
       tl.set(["#autorName, img"], { y: "-100%", display: "block" }).to(
@@ -64,6 +98,7 @@ export default function Home({ data }: Props) {
           width={1000}
           height={1000}
           className="hidden"
+          onLoad={apperAnimation}
           priority
         />
       </div>

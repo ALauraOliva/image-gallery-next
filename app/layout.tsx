@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${grotesk.className} bg-neutral-100 w-full min-h-screen tracking-tighter`}
+        className={`${grotesk.className} bg-neutral-100 w-full min-h-screen tracking-tighter text-zinc-700`}
       >
         <Nav />
         {children}
@@ -30,3 +30,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+//6D9886 teal
+//F2E7D5 blue
