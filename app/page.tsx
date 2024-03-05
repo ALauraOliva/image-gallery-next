@@ -3,7 +3,7 @@ import Home from "./ui/home/home";
 
 export default async function HomePage() {
   // const res = await fetch(
-  //   `https://api.unsplash.com/photos?client_id=${process.env.API_KEY}&per_page=5`
+  //   `https://api.unsplash.com/photos?client_id=${process.env.API_KEY}&per_page=15`
   // );
   // const data: IImage[] = await res.json();
   const data: IImage[] = [

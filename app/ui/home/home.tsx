@@ -72,8 +72,8 @@ export default function Home({ data }: Props) {
         defaults: { ease: "power2.out", duration: 0.7 },
       });
 
-      tl.set(["#autorName, img"], { y: "-100%", display: "block" }).to(
-        ["#autorName, img"],
+      tl.set(["#autorName"], { y: "-100%", display: "block" }).to(
+        ["#autorName"],
         { y: 0 }
       );
     },
@@ -111,13 +111,14 @@ export default function Home({ data }: Props) {
         <Image
           src={currentImg.urls.full}
           alt={currentImg.id.toString()}
-          className="hidden object-cover"
+          className="invisible object-cover"
           onLoad={contextSafe(() => {
             gsap.fromTo(
               "img",
               {
                 delay: 0,
                 y: "-100%",
+                visibility: "visible",
                 ease: "power2.out",
                 duration: 0.7,
               },
@@ -129,7 +130,7 @@ export default function Home({ data }: Props) {
               }
             );
           })}
-          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 40vw"
           fill
           priority
         />

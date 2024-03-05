@@ -19,6 +19,7 @@ export interface IImage {
   sponsorship: Sponsorship | null;
   topic_submissions: TopicSubmissions;
   user: User;
+  blurhash64?: string;
 }
 
 export interface ImageLinks {
