@@ -88,16 +88,13 @@ export default function Home({ data }: Props) {
             key={infoImg.id}
             onClick={changeImg}
             value={infoImg.id}
-            className="overflow-hidden"
+            className="overflow-y-hidden relative"
           >
             <h2
               id="autorName"
-              className="uppercase font-bold text-3xl group text-right hidden md:text-5xl "
+              className="uppercase font-bold text-3xl text-right hidden md:text-5xl"
             >
               {infoImg.user.first_name}
-              <span className="font-light text-sm hidden lg:group-hover:block lg:text-right lg:text-3xl">
-                {infoImg.user.last_name}
-              </span>
             </h2>
           </button>
         ))}
