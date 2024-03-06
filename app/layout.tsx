@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${grotesk.className} bg-neutral-100 w-full min-h-[90vh] tracking-tighter text-zinc-700`}
+        className={`${grotesk.className} bg-neutral-100 w-full min-h-[90vh] tracking-tighter text-zinc-700 overflow-y-hidden`}
       >
         <Nav />
         {children}

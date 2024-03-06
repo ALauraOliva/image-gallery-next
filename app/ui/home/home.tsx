@@ -82,7 +82,7 @@ export default function Home({ data }: Props) {
 
   return (
     <section className="h-[90vh] overflow-scroll" ref={container}>
-      <div className="flex flex-col items-end">
+      <div className="flex flex-col items-end pb-11">
         {data.map((infoImg: IImage) => (
           <button
             key={infoImg.id}
