@@ -1,5 +1,6 @@
-import { IImage } from "@/types";
+import { IImage } from "@/app/lib/types";
 import Home from "./ui/home/home";
+import processImagesFromApi from "./lib/getBase64";
 
 export default async function HomePage() {
   // const res = await fetch(
@@ -1386,6 +1387,8 @@ export default async function HomePage() {
     },
   ];
 
+  // const data: IImage[] = await processImagesFromApi();
+
   data.sort((a, b) => {
     const firstNameA = a.user.first_name || "";
     const firstNameB = b.user.first_name || "";
@@ -1394,7 +1397,7 @@ export default async function HomePage() {
   });
 
   return (
-    <main className="h-full px-5 w-full mt-[10vh] ">
+    <main className="h-full px-5 w-full mt-[10vh] lg:px-20">
       <Home data={data} />
     </main>
   );

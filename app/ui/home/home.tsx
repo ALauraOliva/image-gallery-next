@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { IImage } from "@/types";
+import { IImage } from "@/app/lib/types";
 import { useState, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -81,7 +81,7 @@ export default function Home({ data }: Props) {
   );
 
   return (
-    <section className="h-[90vh]" ref={container}>
+    <section className="h-[90vh] overflow-scroll" ref={container}>
       <div className="flex flex-col items-end">
         {data.map((infoImg: IImage) => (
           <button
@@ -92,10 +92,10 @@ export default function Home({ data }: Props) {
           >
             <h2
               id="autorName"
-              className="uppercase font-bold text-3xl group text-right hidden md:text-4xl "
+              className="uppercase font-bold text-3xl group text-right hidden md:text-5xl "
             >
               {infoImg.user.first_name}
-              <span className="font-light text-sm hidden group-hover:block text-right">
+              <span className="font-light text-sm hidden lg:group-hover:block lg:text-right lg:text-3xl">
                 {infoImg.user.last_name}
               </span>
             </h2>
@@ -105,11 +105,11 @@ export default function Home({ data }: Props) {
 
       <div
         className="overflow-hidden w-3/5 h-1/2 fixed bottom-5 left-5 max-h-[80vh] before:content-['Click_Me'] before:absolute
-      before:bottom-0 before:z-10 before:text-neutral-100 before:left-1 cursor-pointer"
+      before:bottom-0 before:z-10 before:text-neutral-100 before:left-1 cursor-pointer lg:w-2/4 lg:left-20"
         onClick={viewFullImgAnimation}
       >
         <Image
-          src={currentImg.urls.full}
+          src={currentImg.urls.regular}
           alt={currentImg.id.toString()}
           className="invisible object-cover"
           onLoad={contextSafe(() => {
@@ -130,7 +130,7 @@ export default function Home({ data }: Props) {
               }
             );
           })}
-          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 40vw"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 50vw"
           fill
           priority
         />
