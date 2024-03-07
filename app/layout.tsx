@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./ui/globals.css";
 import Nav from "./ui/nav/nav";
+import CustomCursor from "./ui/cursor/cursor";
 
 const grotesk = Space_Grotesk({
   weight: ["300", "700", "600"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body
         className={`${grotesk.className} bg-neutral-100 w-full min-h-[90vh] tracking-tighter text-zinc-700 overflow-y-hidden`}
       >
+        <CustomCursor />
         <Nav />
         {children}
       </body>

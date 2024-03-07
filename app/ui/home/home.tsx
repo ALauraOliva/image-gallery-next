@@ -88,11 +88,18 @@ export default function Home({ data }: Props) {
             key={infoImg.id}
             onClick={changeImg}
             value={infoImg.id}
-            className="overflow-y-hidden relative"
+            className={`overflow-y-hidden relative group/hoverTitle ${
+              currentImg.id === infoImg.id && "text-[#6D9886]"
+            }`}
           >
             <h2
               id="autorName"
-              className="uppercase font-bold text-3xl text-right hidden md:text-5xl"
+              className={`uppercase font-bold text-3xl text-right hidden md:text-5xl
+              ${
+                currentImg.id === infoImg.id
+                  ? ""
+                  : "group-hover/hoverTitle:text-zinc-600"
+              }`}
             >
               {infoImg.user.first_name}
             </h2>
