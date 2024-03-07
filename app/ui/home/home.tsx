@@ -89,7 +89,7 @@ export default function Home({ data }: Props) {
             key={infoImg.id}
             onClick={changeImg}
             value={infoImg.id}
-            className={`overflow-y-hidden relative group/hoverTitle z-10 ${
+            className={`overflow-y-hidden relative group/hoverTitle ${
               currentImg.id === infoImg.id && "text-[#6D9886]"
             }`}
           >

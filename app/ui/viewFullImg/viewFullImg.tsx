@@ -35,7 +35,7 @@ export default function ViewFullImg({
     >
       <button
         onClick={viewFullImgAnimation}
-        className="absolute top-0 h-[10vh] w-full z-10 tracking-tighter md:text-3xl"
+        className="absolute top-0 h-[10vh] w-full tracking-tighter md:text-3xl z-30"
       >
         CLOSE.
       </button>
