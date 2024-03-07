@@ -39,7 +39,7 @@ export default function ViewFullImg({
       >
         CLOSE.
       </button>
-      <div className="overflow-hidden w-[90vw] h-[70vh] relative mt-[10vh] md:w-[80vw] lg:w-[47.5vw-5rem] lg:ml-20">
+      <div className="overflow-hidden w-[90vw] h-[65vh] relative mt-[10vh] md:w-[80vw] lg:w-[47.5vw-5rem] lg:ml-20">
         <Image
           id="fullImg"
           src={currentImg.urls.regular}
@@ -59,7 +59,7 @@ export default function ViewFullImg({
           fill
         />
       </div>
-      <div className="h-fit w-[90vw] mt-5 md:w-[80vw] lg:w-[47.5vw-5rem] lg:mr-20">
+      <div className="h-[15vh] w-[90vw] mt-5 md:w-[80vw] lg:w-[47.5vw-5rem] lg:mr-20 lg:h-fit overflow-y-scroll">
         <div className="overflow-x-hidden">
           <p id="description" className="md:text-2xl italic">
             <span className="not-italic font-semibold">
