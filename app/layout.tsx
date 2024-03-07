@@ -10,7 +10,7 @@ const grotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "ImageGrid",
+  title: "ImageGrid | Home",
   description: "See beautiful images with full HD resolution",
   keywords: "unsplash, images, search, gallery, HD, resolution, talent",
 };
