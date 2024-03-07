@@ -38,6 +38,7 @@ export default function Home({ data }: Props) {
       }
     }
   );
+
   const viewFullImgAnimation = () => {
     if (!showFullImg) {
       //show full img
