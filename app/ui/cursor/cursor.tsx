@@ -69,7 +69,7 @@ export default function CustomCursor() {
     <div>
       <div
         id="custom-cursor"
-        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-20  p-3 flex justify-center items-center bg-zinc-700"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[60] p-3 flex justify-center items-center bg-zinc-700"
       ></div>
     </div>
   );

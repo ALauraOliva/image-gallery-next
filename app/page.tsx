@@ -1394,7 +1394,7 @@ export default async function HomePage() {
   });
 
   return (
-    <main className="h-full px-5 w-full mt-[10vh] lg:px-20 lg:mt-[15vh]">
+    <main className="h-full px-5 w-full mt-[10vh] lg:px-20">
       <Home data={data} />
     </main>
   );

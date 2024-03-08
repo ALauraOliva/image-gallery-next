@@ -82,14 +82,14 @@ export default function Home({ data }: Props) {
   );
 
   return (
-    <section className="h-[90vh] overflow-scroll" ref={container}>
-      <div className="flex flex-col items-end pb-11">
+    <section className="h-[calc(90vh-20px)] overflow-scroll" ref={container}>
+      <div className="flex flex-col items-end">
         {data.map((infoImg: IImage) => (
           <button
             key={infoImg.id}
             onClick={changeImg}
             value={infoImg.id}
-            className={`overflow-y-hidden relative group/hoverTitle ${
+            className={`overflow-y-hidden relative group/hoverTitle z-10 ${
               currentImg.id === infoImg.id && "text-[#6D9886]"
             }`}
           >
@@ -109,7 +109,7 @@ export default function Home({ data }: Props) {
       </div>
 
       <div
-        className="overflow-hidden w-3/5 h-1/2 fixed bottom-5 left-5 max-h-[80vh] before:content-['Click_Me'] before:absolute
+        className="overflow-hidden w-1/2 h-2/5 fixed bottom-5 left-5 max-h-[80vh] before:content-['Click_Me'] before:absolute
       before:bottom-0 before:z-10 before:text-neutral-100 before:left-1 cursor-pointer lg:w-2/4 lg:left-20"
         onClick={viewFullImgAnimation}
       >
@@ -135,7 +135,7 @@ export default function Home({ data }: Props) {
               }
             );
           })}
-          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 50vw"
+          sizes="(max-width: 768px) 40vw, (max-width: 1200px) 50vw, 50vw"
           fill
           priority
         />
