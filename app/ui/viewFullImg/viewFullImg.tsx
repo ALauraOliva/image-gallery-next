@@ -35,11 +35,11 @@ export default function ViewFullImg({
     >
       <button
         onClick={viewFullImgAnimation}
-        className="h-[10vh] w-[90vw] md:w-[80vw] lg:w-[47.5vw-5rem] text-2xl  tracking-tighter md:text-3xl font-bold text-right"
+        className="absolute top-0 left-0 h-[10vh] w-[90vw] md:w-full md:pr-5 text-2xl  tracking-tighter md:text-5xl font-bold text-right"
       >
         CLOSE.
       </button>
-      <div className="overflow-hidden w-[90vw] h-[65vh] relative md:w-[80vw] lg:w-[47.5vw-5rem] lg:ml-20">
+      <div className="overflow-hidden w-[90vw] h-[65vh] relative md:h-[65vh] lg:h-screen">
         <Image
           id="fullImg"
           src={currentImg.urls.regular}
