@@ -35,7 +35,7 @@ export default function ViewFullImg({
       className="absolute top-0 left-0 z-20 w-full h-full bg-[#F2E7D5] grid grid-cols-2  grid-rows-[min-content]"
     >
       {/* Close Button */}
-      <div className="row-start-1 col-span-2 col-start-1 w-fit mx-auto overflow-x-auto h-[5vh] flex items-center md:text-2xl">
+      <div className="row-start-1 col-span-2 col-start-1 w-fit mx-auto overflow-x-auto h-[10vh] flex items-center md:text-2xl">
         <button
           id="closeBtn"
           onClick={viewFullImgAnimation}
@@ -46,7 +46,7 @@ export default function ViewFullImg({
       </div>
 
       {/* Full Img container */}
-      <div className="row-start-2 col-start-1 col-span-2 relative h-[80vh] w-[90vw] mx-auto overflow-x-hidden md:w-[60vw]">
+      <div className="row-start-2 col-start-1 col-span-2 relative h-[70vh] w-[90vw] mx-auto overflow-x-hidden md:w-[60vw]">
         <Image
           id="fullImg"
           src={currentImg.urls.regular}
@@ -68,8 +68,11 @@ export default function ViewFullImg({
       </div>
 
       {/* Description container */}
-      <div className="row-start-3 col-span-2 col-start-1 h-[10vh] mx-auto overflow-x-hidden overflow-y-scroll w-[90vw] md:w-[60vw]">
-        <p id="description" className="md:text-2xl italic text-center px-5">
+      <div className="row-start-3 col-span-2 col-start-1 h-[20vh] mx-auto overflow-x-hidden  w-[90vw] md:w-[60vw]">
+        <p
+          id="description"
+          className="md:text-2xl italic text-center px-5 h-2/3 overflow-y-scroll"
+        >
           <span className="not-italic font-semibold">
             {currentImg.user.name}
             <br />
