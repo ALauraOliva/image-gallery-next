@@ -15,7 +15,7 @@ export default async function HomePage() {
   //     promoted_at: null,
   //     width: 8640,
   //     height: 5760,
-  //     color: "#f3f3f3",
+  //     color: "#333",
   //     blur_hash: "LpDv.$XoE2a~.TXAIUso%MjFM{t6",
   //     description:
   //       "NEOM is home to 2,000 different marine species, 600 of which are native to the Red Sea and cannot be found anywhere else in the world. | Islands of NEOM- NEOM, Saudi Arabia",

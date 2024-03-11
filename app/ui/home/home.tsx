@@ -57,7 +57,7 @@ export default function Home({ data }: Props) {
         defaults: { ease: "power2.out", duration: 0.7 },
       });
 
-      tl.to("#fullImg, #description, #author", {
+      tl.to("#fullImg, #description, #author, #closeBtn", {
         x: "-101%",
         onComplete: () => {
           setShowFullImg(!showFullImg);
