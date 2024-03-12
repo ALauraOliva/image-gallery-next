@@ -71,7 +71,7 @@ export default function ViewFullImg({
       <div className="row-start-3 col-span-2 col-start-1 h-[20vh] mx-auto overflow-x-hidden  w-[90vw] md:w-[60vw]">
         <p
           id="description"
-          className="md:text-2xl italic text-center px-5 h-2/3 overflow-y-scroll"
+          className="md:text-2xl italic text-center px-5 h-2/3 overflow-y-scroll lg:mt-5"
         >
           <span className="not-italic font-semibold">
             {currentImg.user.name}
